@@ -55,3 +55,17 @@ def test_get_num_classes_when_courses_equals_None():
     result =  charles.get_num_classes()
     #Assert
     assert result == 0
+
+def test_two_get_student_with_more_classes():
+    #Arrange
+    charles = Student("Charles Babbage", "senior", ["mechanical engineering"])
+    ada = Student(
+        "Ada Lovelace",
+        "sophomore",
+        ["mathematics", "foundations of computing"]
+    )
+    #Act
+    result = get_student_with_more_classes(ada, charles)
+
+    #Assert
+    assert result == ada
