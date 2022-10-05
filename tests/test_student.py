@@ -34,22 +34,24 @@ def test_summary():
     assert anne.summary() == "Anne Byron is a senior enrolled in 2 classes"
 
 def test_get_student_with_more_classes():
+    #Arrange
     charles = Student("Charles Babbage", "senior", ["mechanical engineering"])
     ada = Student(
         "Ada Lovelace",
         "sophomore",
         ["mathematics", "foundations of computing"]
     )
-
-    # TODO: write assertions
+    #Act
     result = get_student_with_more_classes(charles, ada)
 
+    #Assert
     assert result == ada
+    # TODO: write assertions
 
-def test_student_with_no_clases():
-    charles = Student("Charles Babbage", "senior", [])
-
-    result = charles.courses
-
-    assert result == []
-
+def test_get_num_classes_when_courses_equals_None():
+    #Arrange
+    charles = Student("Charles Babbage", "senior", None)
+    #act 
+    result =  charles.get_num_classes()
+    #Assert
+    assert result == 0
