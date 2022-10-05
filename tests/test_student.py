@@ -42,3 +42,14 @@ def test_get_student_with_more_classes():
     )
 
     # TODO: write assertions
+    result = get_student_with_more_classes(charles, ada)
+
+    assert result == ada
+
+def test_student_with_no_clases():
+    charles = Student("Charles Babbage", "senior", [])
+
+    result = charles.courses
+
+    assert result == []
+
